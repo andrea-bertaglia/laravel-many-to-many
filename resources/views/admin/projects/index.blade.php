@@ -30,8 +30,8 @@
                         <td class="fw-bold">{{ $project->title }}</td>
                         <td>{{ $project->slug }}</td>
                         <td>
-                            <span class="badge rounded-pill"
-                                style="background-color:{{ $project->type?->color }}">{{ $project->type?->name }}</span>
+                            <span class="badge rounded-pill border"
+                                style="color:{{ $project->type?->color }}">{{ $project->type?->name }}</span>
                         </td>
                         <td class="d-flex align-items-center justify-content-center gap-4 py-3">
                             <div>

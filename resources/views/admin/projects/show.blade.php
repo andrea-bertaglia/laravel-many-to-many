@@ -19,8 +19,8 @@
                 <dt>{{ $project->slug }}</dt>
                 <div class="pt-3">
                     <span class="pe-2">Tipo</span>
-                    <span class="badge rounded-pill"
-                        style="background-color:{{ $project->type?->color }}">{{ $project->type?->name }}</span>
+                    <span class="badge rounded-pill border"
+                        style="color:{{ $project->type?->color }}">{{ $project->type?->name }}</span>
                 </div>
 
             </div>

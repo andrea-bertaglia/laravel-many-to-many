@@ -2,23 +2,15 @@
 
 return [
   [
-    "name" => "HTML",
+    "name" => "Front-End",
     "color" => "blue",
   ],
   [
-    "name" => "JavaScript",
+    "name" => "Back-End",
     "color" => "orange",
   ],
   [
-    "name" => "PHP",
+    "name" => "Full-Stack",
     "color" => "lightblue",
-  ],
-  [
-    "name" => "Vue.js",
-    "color" => "greenyellow",
-  ],
-  [
-    "name" => "Laravel",
-    "color" => "red",
   ]
 ];
