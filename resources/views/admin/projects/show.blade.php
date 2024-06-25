@@ -22,7 +22,17 @@
                     <span class="badge rounded-pill border"
                         style="color:{{ $project->type?->color }}">{{ $project->type?->name }}</span>
                 </div>
+                <div class="pt-3">
+                    <span class="pe-2">Tecnologie</span>
+                    @forelse ($project->technologies as $technology)
+                        <span class="badge rounded-pill"
+                            style="background-color:{{ $technology->color }}">{{ $technology->name }}</span>
+                    @empty
+                        <small class="fst-italic fw-lighter">Nessun risultato trovato</small>
+                    @endforelse
 
+
+                </div>
             </div>
         </div>
     </div>
