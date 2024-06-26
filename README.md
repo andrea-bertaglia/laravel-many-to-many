@@ -4,7 +4,7 @@ nome repo: **laravel-many-to-many**
 
 Continuiamo a lavorare sul progetto dei giorni scorsi e aggiungiamo una nuova entità Technology. Questa entità rappresenta le tecnologie utilizzate ed è in relazione many to many con i progetti.
 
-## STEP 1
+## GIORNO 1
 
 ### I task sono:
 
@@ -18,7 +18,7 @@ Continuiamo a lavorare sul progetto dei giorni scorsi e aggiungiamo una nuova en
 
 creare il seeder per il model Technology.
 
-## STEP 2
+## GIORNO 2
 
 Aggiungere nelle operazioni CRUD del Progetto la possibilità di associare delle tecnologie.
 

@@ -66,8 +66,18 @@
                     <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
                         @foreach ($technologies as $technology)
                             <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
-                                <input @checked($project->technologies->contains($technology)) type="checkbox" class="btn-check" name="technologies[]"
-                                    id="technology-{{ $technology->id }}" value="{{ $technology->id }}" autocomplete="off">
+                                {{-- validazione dei dati --}}
+                                @if (old('technologies' == !null))
+                                    {{-- se ci sono errori, mostra le technologies selezionate memorizzate nell'old --}}
+                                    <input @checked(in_array($technology->id, old('technologies'))) type="checkbox" class="btn-check"
+                                        name="technologies[]" id="technology-{{ $technology->id }}"
+                                        value="{{ $technology->id }}" autocomplete="off">
+                                @else
+                                    {{-- anche se non ci sono errori, mostra le technologies selezionate memorizzate nel db --}}
+                                    <input @checked($project->technologies->contains($technology)) type="checkbox" class="btn-check"
+                                        name="technologies[]" id="technology-{{ $technology->id }}"
+                                        value="{{ $technology->id }}" autocomplete="off">
+                                @endif
                                 <label class="btn btn-outline-secondary me-2 badge rounded-pill text-dark"
                                     for="technology-{{ $technology->id }}">{{ $technology->name }}</label>
                             </div>

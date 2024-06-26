@@ -43,7 +43,7 @@
                     <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
                         @foreach ($technologies as $technology)
                             <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
-                                <input type="checkbox" class="btn-check" name="technologies[]"
+                                <input @checked(in_array($technology->id, old('technologies', []))) type="checkbox" class="btn-check" name="technologies[]"
                                     id="technology-{{ $technology->id }}" value="{{ $technology->id }}" autocomplete="off">
                                 <label class="btn btn-outline-secondary me-2 badge rounded-pill text-dark"
                                     for="technology-{{ $technology->id }}">{{ $technology->name }}</label>
