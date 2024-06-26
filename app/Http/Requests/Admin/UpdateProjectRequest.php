@@ -42,7 +42,8 @@ class UpdateProjectRequest extends FormRequest
             'title.required' => 'Il titolo non può essere vuoto',
             'title.min' =>  'Il titolo non può essere minore di tre caratteri',
             'description.required' => 'La descrizione è richiesta',
-            'type_id.required' => 'Il tipo è richiesto'
+            'type_id.required' => 'Il tipo è richiesto',
+            'technologies' => 'La tecnologia inserita non è corretta'
         ];
     }
 }

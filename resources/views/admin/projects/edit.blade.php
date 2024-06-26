@@ -83,6 +83,9 @@
                             </div>
                         @endforeach
                     </div>
+                    @error('technologies')
+                        <div id="technologies-error" class="invalid-feedback d-block pt-2">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
