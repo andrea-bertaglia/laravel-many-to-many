@@ -39,7 +39,17 @@
                             <div id="type_id-error" class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    <h6 class="fw-bold">Tecnologie</h6>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
+                        @foreach ($technologies as $technology)
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
+                                <input type="checkbox" class="btn-check" name="technologies[]"
+                                    id="technology-{{ $technology->id }}" value="{{ $technology->id }}" autocomplete="off">
+                                <label class="btn btn-outline-secondary me-2 badge rounded-pill text-dark"
+                                    for="technology-{{ $technology->id }}">{{ $technology->name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
                 <div class="col-6">
                     {{-- <div class="mb-3">

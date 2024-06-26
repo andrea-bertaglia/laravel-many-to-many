@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="py-3 fw-bold d-inline-block pe-2">Modifica il progetto:</h1>
-        <h2 class="pb-3 d-inline-block">{{ $project->title }}</h2>
+        <h4 class="pb-3 d-inline-block">{{ $project->title }}</h4>
 
         <form action="{{ route('admin.projects.update', ['project' => $project->slug]) }}" method="POST">
             @csrf
