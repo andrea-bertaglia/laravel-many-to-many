@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="py-3 fw-bold d-inline-block pe-2">Modifica il progetto:</h1>
-        <h4 class="pb-3 d-inline-block">{{ $project->title }}</h4>
+        <h2 class="pb-3 d-inline-block">{{ $project->title }}</h2>
 
         <form action="{{ route('admin.projects.update', ['project' => $project->slug]) }}" method="POST">
             @csrf
@@ -61,7 +61,17 @@
                         @error('type_id')
                             <div id="type_id-error" class="invalid-feedback">{{ $message }}</div>
                         @enderror
-
+                    </div>
+                    <h6 class="fw-bold pt-1">Tecnologie</h6>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
+                        @foreach ($technologies as $technology)
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Tecnologie">
+                                <input @checked($project->technologies->contains($technology)) type="checkbox" class="btn-check" name="technologies[]"
+                                    id="technology-{{ $technology->id }}" value="{{ $technology->id }}" autocomplete="off">
+                                <label class="btn btn-outline-secondary me-2 badge rounded-pill text-dark"
+                                    for="technology-{{ $technology->id }}">{{ $technology->name }}</label>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-6">
@@ -71,7 +81,8 @@
                             class="form-control bg-body-secondary @error('slug')
                             is-invalid
                         @enderror"
-                            id="slug" aria-describedby="slug" name="slug" value="{{ old('slug', $project->slug) }}">
+                            id="slug" aria-describedby="slug" name="slug"
+                            value="{{ old('slug', $project->slug) }}">
                         <div id="slugHelp" class="form-text">Lo slug non può essere modificato, si aggiorna in base al
                             titolo inserito.</div>
                     </div>
