@@ -8,9 +8,26 @@
 
         <div class="d-flex justify-content-between align-items-center pb-3">
             <h1 class="py-4 fw-bold">Elenco progetti</h1>
+            {{-- <div>
+                <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">Aggiungi nuovo</a>
+            </div> --}}
+            {{-- filtro paginazione --}}
             <div>
-                <a class="btn btn-success" href="{{ route('admin.projects.create') }}">Aggiungi nuovo</a>
+                <form class="d-flex" action="{{ route('admin.projects.index') }}" method="GET">
+                    @csrf
+                    <label class="me-2" for="per_page"><small class=" text-secondary">Elementi per
+                            pagina</small></label>
+                    <div class="col-xs-2 me-2">
+                        <select class="form-select form-select-sm" aria-label="Seleziona il numero di elementi per pagina"
+                            name="per_page" id="per_page">
+                            <option selected value="5" @selected($projects->perPage() == 5)>5</option>
+                            <option value="10" @selected($projects->perPage() == 10)>10</option>
+                            <option value="15" @selected($projects->perPage() == 15)>15</option>
+                        </select>
 
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary">Applica</button>
+                </form>
             </div>
         </div>
         <table class="table table-striped table-hover">
@@ -67,6 +84,8 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="pt-2">{{ $projects->links() }}</div>
+
     </div>
     <!-- Modal -->
     @include('partials.delete-modal')
