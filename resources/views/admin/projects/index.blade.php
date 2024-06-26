@@ -20,6 +20,7 @@
                     <th scope="col">Titolo</th>
                     <th scope="col">Slug</th>
                     <th scope="col">Tipo</th>
+                    <th scope="col">Tecnologie</th>
                     <th scope="col">Opzioni</th>
                 </tr>
             </thead>
@@ -32,6 +33,14 @@
                         <td>
                             <span class="badge rounded-pill border"
                                 style="color:{{ $project->type?->color }}">{{ $project->type?->name }}</span>
+                        </td>
+                        <td>
+                            @forelse ($project->technologies as $technology)
+                                <span class="badge rounded-pill"
+                                    style="background-color:{{ $technology->color }}">{{ $technology->name }}</span>
+                            @empty
+                                <small class="fst-italic fw-lighter">n/a</small>
+                            @endforelse
                         </td>
                         <td class="d-flex align-items-center justify-content-center gap-4 py-3">
                             <div>

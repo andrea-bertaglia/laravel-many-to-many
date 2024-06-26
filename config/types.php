@@ -11,6 +11,6 @@ return [
   ],
   [
     "name" => "Full-Stack",
-    "color" => "lightblue",
+    "color" => "red",
   ]
 ];
