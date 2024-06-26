@@ -95,6 +95,7 @@ class ProjectController extends Controller
 
     public function destroy(Project $project)
     {
+        $project->technologies()->detach(); // non è obbligatorio con cascadeOnDelete
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', 'Il progetto <span class="fw-bold">' . $project->title . '</span> è stato cancellato.');
     }
